@@ -334,7 +334,11 @@ const resumeSection = {
   display: false // Set false to hide this section, defaults to true
 };
 
-const contactInfo = {};
+const contactInfo = {
+  title: emoji("Contact ☎️"),
+  subtitle:
+    "Discuss a project or just want to say hi?.",
+};
 
 // Twitter Section
 
