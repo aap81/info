@@ -191,28 +191,36 @@ const openSource = {
 };
 
 // Some big projects you have worked on
-
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SIGNIFICANT RESEARCH & ENGINEERING PROJECTS I'VE WORKED ON",
+  title: "Notable Projects",
+  subtitle: "SIGNIFICANT RESEARCH, PRODUCT & ENGINEERING PROJECTS I'VE WORKED ON",
   projects: [
+        // 5 — Ongoing: Monolith → Microservices (Test Code + Core Libs Refactor)
+    {
+      image: require("./assets/images/microservices.png"),
+      projectName: "Monolithic Architecture to Microservices Refactor (Ongoing)",
+      projectDesc:
+        "Currently leading an ongoing initiative to refactor a monolithic system into modular microservices. Beginning with extraction of shared test suites, common logic, and internal libraries into independent, containerized services. Improves maintainability, isolation, and CI/CD performance across the engineering organization.",
+      footerLink: []
+    },
+    // 1 — Research Thesis
     {
       image: require("./assets/images/flairs38.png"),
       projectName: "RQPool – Graph-Level Anomaly Detection",
       projectDesc:
-        "Master’s research thesis focused on designing a multi-branch neural network architecture for graph-level anomaly detection. Includes published work exploring multi-branch feature aggregation and performance improvements on graph datasets.",
+        "Master’s thesis proposing a multi-branch neural network architecture for graph-level anomaly detection. Achieved 2–5% higher accuracy than baseline methods and state-of-the-art models, while demonstrating strong scalability across multi-dimensional datasets compared to other methods that focused on homogeneous datasets.",
       footerLink: [
-        {
-          name: "Research Paper",
-          url: "https://journals.flvc.org/FLAIRS/article/view/138971"
-        }
+        { name: "Research Paper", url: "https://journals.flvc.org/FLAIRS/article/view/138971" },
+        { name: "Thesis", url: "https://uwindsor.scholaris.ca/server/api/core/bitstreams/f0b4f183-1c37-4823-ac26-7aace95e7281/content" }
       ]
     },
+
+    // 2 — Robotics Project
     {
       image: require("./assets/images/pcube.png"),
       projectName: "AI-Based 8-Queens Solving Robot",
       projectDesc:
-        "An AI-driven robotic system built to solve the classic 8-Queens puzzle using magnetic manipulation and Arduino automation. Published in IJCSN and recognized for innovation in hardware + AI integration.",
+        "AI-driven robotic system built using Arduino and magnetic manipulation to solve the 8-Queens puzzle. Won 3rd prize at a national-level competition and 1st prize in Project, Presentation and Poster (Pcube) competition at FCRIT.",
       footerLink: [
         {
           name: "Published Paper",
@@ -220,17 +228,54 @@ const bigProjects = {
         }
       ]
     },
+
+    // 3 — GoComet Freight Index (GFI)
     {
       image: require("./assets/images/gfi.png"),
       projectName: "GoComet Freight Index (GFI)",
       projectDesc:
-        "Built the foundational version of the GoComet Freight Index (GFI), a production-scale analytics platform that tracks global freight rates in real time. Increased customer engagement by 85% and drove 40% customer acquisition. Built using microservices, automated data pipelines, and optimized database structures.",
+        "Designed and implemented the initial architecture of the GoComet Freight Index, a real-time analytics platform aggregating global freight data. Contributed to an 85% boost in customer engagement and 40% increase in acquisition. Built using Ruby on Rails, React, ETL workflows, and optimized analytics pipelines.",
       footerLink: [
         {
-          name: "Company Website",
+          name: "Product Page",
           url: "https://www.gocomet.com/freight-shipping-rates-index-calculator"
         }
       ]
+    },
+        // 6 — Client Integration Performance Revamp
+    {
+      image: require("./assets/images/refactor.png"),
+      projectName: "Client Integration Performance Revamp",
+      projectDesc:
+        "Refactored and optimized a critical third-party integration pipeline, reducing processing time from 10 minutes to 3 minutes (70% improvement). Enhanced throughput, reduced timeouts, and improved reliability for enterprise clients.",
+      footerLink: []
+    },
+
+    // 4 — ETL Microservice
+    {
+      image: require("./assets/images/gfi.png"),
+      projectName: "Analytical Reporting & ETL Microservice",
+      projectDesc:
+        "Architected a standalone ETL and reporting microservice by separating analytics workloads from the monolith. Used MongoDB aggregation pipelines to flatten and transform data, reducing manual reporting by 98% and cutting report generation time from minutes to seconds.",
+      footerLink: []
+    },
+
+    // 8 — Third-Party System Integrations
+    {
+      image: require("./assets/images/integrations.png"),
+      projectName: "Enterprise Integrations (SFTP, OTM, REST APIs)",
+      projectDesc:
+        "Built and maintained enterprise-grade integrations using SFTP, OTM, and REST APIs. Improved automation, reliability, and customer onboarding efficiency, contributing to 30% client adoption growth.",
+      footerLink: []
+    },
+
+    // 9 — SAP Performance Testing Framework (Internship)
+    {
+      image: require("./assets/images/sapLogo.png"),
+      projectName: "Performance & Automation Framework — SAP Analytics Cloud",
+      projectDesc:
+        "Developed during my internship at SAP. Implemented reusable functional testing scripts, automation flows, and performance/stress testing suites using Java, Spring Boot, JMeter, and Postman. Reduced production bugs by 80% and infrastructure-related issues by 20% through improved test coverage and scenario modeling.",
+      footerLink: []
     }
   ],
   display: true
