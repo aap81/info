@@ -193,7 +193,7 @@ const openSource = {
 // Some big projects you have worked on
 const bigProjects = {
   title: "Notable Projects",
-  subtitle: "SIGNIFICANT RESEARCH, PRODUCT & ENGINEERING PROJECTS I'VE WORKED ON",
+  subtitle: "Significant research, product & engineering projects",
   projects: [
         // 5 — Ongoing: Monolith → Microservices (Test Code + Core Libs Refactor)
     {
@@ -286,9 +286,8 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
+  title: emoji("Achievements 🏆"),
+  subtitle: "",
 
   achievementsCards: [
     {

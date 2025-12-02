@@ -10,7 +10,7 @@
   width: 90%;
   padding: 20px 10px;
   margin: 0px auto;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 .greeting-main {
@@ -43,12 +43,13 @@
 }
 
 .greeting-text {
-  font-size: 70px;
+  font-size: 60px;
   line-height: 1.1;
   color: white !important;
 }
 
 .greeting-text-p {
+  margin-top: 0;
   font-size: 30px;
   line-height: 40px;
 }
@@ -64,6 +65,50 @@
   animation-name: wave;
   display: inline-block;
   transform-origin: 70% 70%;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;     /* adjust spacing */
+}
+
+.image-content-profile img.profile-image {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.image-content-profile {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-image {
+  border-radius: 50%;
+  border: 0.5rem solid $githubProfileCardBorder;
+  margin-left: auto;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  box-shadow: $lightBoxShadow 0 30px 30px -30px;
+  transition: all 0.3s ease-out;
+}
+
+.profile-image:hover {
+  box-shadow: none;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.profile-image:hover {
+  box-shadow: $lightBoxShadow 0 50px 50px -50px;
+  transition: 0.3s ease-out;
 }
 
 @keyframes wave {
@@ -96,6 +141,7 @@
     font-size: 50px;
   }
   .greeting-text-p {
+    margin-top: 2rem;
     font-size: 20px;
   }
 }
@@ -108,6 +154,7 @@
     text-align: center;
   }
   .greeting-text-p {
+    margin-top: 2rem;
     font-size: 16px;
     line-height: normal;
     text-align: center;

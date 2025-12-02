@@ -161,6 +161,13 @@
   top: 0;
 }
 
+
+@media (max-width: 1024px) {
+  .header .logo {
+    font-size: 1.3em;
+  }
+}
+
 /* 48em = 768px */
 
 @media (min-width: 48em) {
@@ -178,9 +185,16 @@
   .header .menu-icon {
     display: none;
   }
+  .header .logo {
+    font-size: 1.3em;
+  }
 }
 @media (max-width: 960px) and (min-width: 768px) {
   .header {
     font-size: 12px;
+  }
+
+  .header .logo {
+    font-size: 1.3em;
   }
 }

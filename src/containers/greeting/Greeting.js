@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import "./Greeting.scss";
@@ -8,9 +8,40 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import {illustration, greeting} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
+import {openSource} from "../../portfolio";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
+  const [profile, setProfile] = useState(null);
+
+  function setProfileFunction(user) {
+    setProfile(user);
+  }
+
+  useEffect(() => {
+  if (openSource.showGithubProfile === "true") {
+    const getProfileData = () => {
+      fetch(process.env.PUBLIC_URL + "/profile.json")
+        .then(result => {
+          if (!result.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return result.json();
+        })
+        .then(response => {
+          // response.data.user from your JSON structure
+          setProfileFunction(response.data.user);
+        })
+        .catch(function (error) {
+          console.error(`${error} (cannot fetch github avatar)`);
+          setProfileFunction(null);
+          openSource.showGithubProfile = "false";
+        });
+    };
+    getProfileData();
+  }
+  }, []);
+
   if (!greeting.displayGreeting) {
     return null;
   }
@@ -20,35 +51,30 @@ export default function Greeting() {
         <div className="greeting-main">
           <div className="greeting-text-div">
             <div>
-              <h1
-                className={isDark ? "dark-mode greeting-text" : "greeting-text"}
-              >
-                {" "}
-                {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
-              </h1>
-              <p
-                className={
+              <div className="profile-row">
+                {profile && (
+                  <div className="image-content-profile">
+                    <img
+                      src={profile.avatarUrl}
+                      alt={profile.name || "Profile avatar"}
+                      className="profile-image"
+                    />
+                  </div>
+                )}
+                <h1 className={isDark ? "dark-mode greeting-text" : "greeting-text"}>
+                  {" "}
+                  {greeting.title}{" "}
+                  <span className="wave-emoji">{emoji("👋")}</span>
+                </h1>
+              </div>
+              <p className={
                   isDark
                     ? "dark-mode greeting-text-p"
                     : "greeting-text-p subTitle"
-                }
-              >
+              }>
                 {greeting.subTitle}
               </p>
-              <div id="resume" className="empty-div"></div>
               <SocialMedia />
-              <div className="button-greeting-div">
-                {greeting.resumeLink && (
-                  <a
-                    href={require("./resume.pdf")}
-                    download="Resume.pdf"
-                    className="download-link-button"
-                  >
-                    <Button text="Download my resume" />
-                  </a>
-                )}
-              </div>
             </div>
           </div>
           <div className="greeting-image-div">

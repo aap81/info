@@ -5,6 +5,7 @@
   height: auto;
   width: 250px;
 }
+
 .card-title {
   color: $titleColor;
   font-size: 22px;
@@ -12,11 +13,13 @@
   font-weight: 700;
   margin: 15px 0 0 0;
 }
+
 .card-subtitle {
   color: $cardSubtitle;
   font-size: 17px;
   line-height: 1.5rem;
 }
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -25,7 +28,9 @@
   border-radius: 10px;
   border: 1px solid $lightBorder1;
   justify-content: center;
+  /* layout sizing handled below in .projects-container flex rules */
 }
+
 .project-card-light {
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   -webkit-transition: all 0.3s ease;
@@ -43,12 +48,15 @@
 .project-detail {
   text-align: center;
 }
+
 .project-card-light:hover {
   box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
 }
+
 .project-card-dark:hover {
   box-shadow: 0px 20px 30px -10px $darkBoxShadow;
 }
+
 .project-image {
   position: relative;
   height: 250px;
@@ -58,6 +66,7 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -81,7 +90,6 @@
   }
 }
 
-
 .project-card-footer span.project-tag {
   background: $buttonColor;
   color: $lightBackground3;
@@ -100,9 +108,58 @@
   transition: 0.2s ease-in;
 }
 
+/* ====== LAYOUT (FLEXBOX) ====== */
+/* Desktop: up to 3 cards per row, last row centered */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centers last row */
+  gap: 1rem;
+}
+
+/* Base card width: 3 per row on large screens */
+.projects-container .project-card {
+  flex: 0 1 calc((100% - 2rem) / 3); /* 3 columns with gaps */
+  max-width: 360px; /* prevent over-stretching on huge screens */
+}
+
+/* ====== MEDIA QUERIES ====== */
+
+/* Tablets / small laptops – 2 per row */
+@media (max-width: 1024px) {
+  .projects-container .project-card {
+    flex: 0 1 calc((100% - 1rem) / 2); /* 2 columns */
+    max-width: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+  }
+}
+
+/* Mobile – 1 per row (stacked one after the other) */
 @media (max-width: 768px) {
+  .projects-container {
+    justify-content: center; /* still center single column */
+  }
+
+  .projects-container .project-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+  }
+}
+
+/* Make Fade content always visible on mobile */
+@media (max-width: 768px) {
+  .react-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
   .project-subtitle {
-    font-size: 16px;
     text-align: center;
   }
 }
