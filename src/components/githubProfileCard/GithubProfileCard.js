@@ -21,8 +21,6 @@ export default function GithubProfileCard() {
             </div>
             <SocialMedia />
           </div>
-          <div className="image-content-profile">
-          </div>
         </div>
       </div>
     </Fade>

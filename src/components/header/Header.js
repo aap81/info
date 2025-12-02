@@ -61,6 +61,9 @@ function Header() {
               <a href="#achievements">Achievements</a>
             </li>
           )}
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
           {viewBlog && (
             <li>
               <a href="#blogs">Blogs</a>

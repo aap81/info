@@ -56,6 +56,9 @@
 }
 
 @media (max-width: 768px) {
+  .skill {
+    line-height: 5vw;
+  }
   .skills-container {
     flex-direction: column;
   }
